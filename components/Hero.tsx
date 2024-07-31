@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spotlight } from './components/ui/Spotlight';
+import { Spotlight } from './ui/Spotlight';
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
           fill='white'
         />
         <Spotlight
-          className='top-10 -left-full h-[80vh] w-[50vw]'
+          className='top-10 left-full h-[80vh] w-[50vw]'
           fill='purple'
         />
         <Spotlight className='top-28 left-80 h-[80vh] w-[50vw]' fill='blue' />
