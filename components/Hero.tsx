@@ -33,7 +33,7 @@ const Hero = () => {
             words='Transforming Ideas into Incredible Experiences'
           />
           <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
-            Hi, I&apos;m Afan, a full-stack developer based in London.
+            Hi, I&apos;m Afam, a full-stack developer based in London.
           </p>
           <a href='#about'>
             <MagicButton
