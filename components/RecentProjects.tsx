@@ -11,14 +11,15 @@ const RecentProjects = () => {
         A small selection of{' '}
         <span className='text-purple'> recent projects</span>
       </h1>
-      <div className='flex flex-wrap items-center justify-center p-4 gap-16 mt-10'>
+      <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
+        {/* TODO: fix card background color */}
         {projects.map(({ id, title, des, img, iconLists, link }) => (
           <div
             key={id}
-            className='lg:min-h-[32.5rem] h-[30rem] flex items-center justify-center  w-[80vw]'>
+            className='lg:min-h-[32.5rem] flex sm:h-[41rem]  h-[32rem] items-center justify-center  sm:w-[570px] w-[80vw]'>
             <PinContainer title={title} href={link}>
-              <div className='relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10'>
-                <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#131162d]'>
+              <div className='relative sm:w-[570px] flex items-center justify-center sm:h-[40vh] h-[30vh]  w-[80vw] overflow-hidden  mb-10'>
+                <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#080A24]'>
                   <img src='/bg.png' alt='bg-img' />
                 </div>
                 <img src={img} alt={title} className='z-10 absolute bottom-0' />
@@ -39,6 +40,12 @@ const RecentProjects = () => {
                       <img src={icon} alt={icon} className='p-2' />
                     </div>
                   ))}
+                </div>
+                <div className='flex justify-center items-center'>
+                  <p className='flex lg:text-xl md:text-xs text-sm text-purple'>
+                    Check live site
+                  </p>
+                  <FaLocationArrow className='ms-3' color='#CBACF9' />
                 </div>
               </div>
             </PinContainer>
