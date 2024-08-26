@@ -2,6 +2,7 @@
 import React from 'react';
 import { projects } from '@/data';
 import { PinContainer } from './ui/3d-pin';
+import { FaLocationArrow } from 'react-icons/fa';
 
 const RecentProjects = () => {
   return (
@@ -30,10 +31,11 @@ const RecentProjects = () => {
               </p>
               <div className='flex items-center justify-between mt-7 mb-3'>
                 <div className='flex items-center'>
-                  {iconLists.map((icon) => (
+                  {iconLists.map((icon, index) => (
                     <div
                       key={icon}
-                      className='border rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 border-white/[0.2]'>
+                      className='border rounded-full flex justify-center items-center bg-black lg:w-10 lg:h-10 w-8 h-8 border-white/[0.2]'
+                      style={{ transform: `translateX(-${5 * index * 2}px)` }}>
                       <img src={icon} alt={icon} className='p-2' />
                     </div>
                   ))}
