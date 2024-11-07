@@ -1,5 +1,5 @@
 import React from 'react';
-
+//TODO: Get email copy button to work on repeat
 const MagicButton = ({
   title,
   icon,
