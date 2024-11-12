@@ -6,9 +6,9 @@ import { CanvasRevealEffect } from '@/components/ui/CanvasRevealEffect';
 
 export default function Process() {
   return (
-    <section className='w-full py-20'>
+    <section className='w-full py-20' id='process'>
       <h1 className='heading'>
-        My <span className='text-purple'> Approach</span>
+        My <span className='text-purple'> Process</span>
       </h1>
       <div className='flex flex-col items-center justify-center gap-4 my-20 lg:flex-row '>
         <Card
