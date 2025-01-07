@@ -107,15 +107,18 @@ export const socialMedia = [
     id: 1,
     alt: 'github logo',
     img: '/git.svg',
+    link: 'https://github.com/afam-io',
   },
   {
     id: 2,
     alt: 'twitter logo',
     img: '/twit.svg',
+    link: 'https://x.com/afamokoh',
   },
   {
     id: 3,
     alt: 'linkedIn logo',
     img: '/link.svg',
+    link: 'https://www.linkedin.com/in/afam-okoh/',
   },
 ];
