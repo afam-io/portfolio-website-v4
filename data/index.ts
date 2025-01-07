@@ -122,3 +122,17 @@ export const socialMedia = [
     link: 'https://www.linkedin.com/in/afam-okoh/',
   },
 ];
+
+export const projects = [
+  {
+    id: 1,
+    title: 'Environmental App',
+    des: ' An App for eco-minded individuals who are looking for inspiration as to how they can lessen their environmental impact in an approachable and accessible way.',
+    img: '',
+    iconLists: ['/tail.svg'],
+    link: 'https://github.com/afam-io/final-project-front-end-boolean-pirates',
+  },
+  // { id, title, des, img, iconLists, link },
+  // { id, title, des, img, iconLists, link },
+  // { id, title, des, img, iconLists, link },
+];
