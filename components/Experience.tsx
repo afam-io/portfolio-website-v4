@@ -1,6 +1,6 @@
 import React from 'react';
 import { workExperience } from '../data/index';
-import { Button } from './ui/MovingBorders';
+import { CardBorder } from './ui/MovingBorders';
 
 const Experience = () => {
   return (
@@ -11,7 +11,7 @@ const Experience = () => {
       </h1>
       <div className='w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10'>
         {workExperience.map((card) => (
-          <Button
+          <CardBorder
             key={card.id}
             //borderRadius='1 rem'
             className='flex-1 text-white border-neutral-200 dark:border-slate-800'
@@ -31,7 +31,7 @@ const Experience = () => {
                 </p>
               </div>
             </div>
-          </Button>
+          </CardBorder>
         ))}
       </div>
     </div>
