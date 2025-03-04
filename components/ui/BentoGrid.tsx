@@ -2,11 +2,13 @@
 import { cn } from '@/lib/utils';
 import { BackgroundGradientAnimation } from './BackgroundGradientAnimation';
 import { GlobeDemo } from './GridGlobe';
-import Lottie from 'react-lottie';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import animationData from '@/data/confetti.json';
 import MagicButton from './MagicButton';
 import { IoCopyOutline } from 'react-icons/io5';
+
+const Lottie = dynamic(() => import('react-lottie-player'), { ssr: false });
 
 export const BentoGrid = ({
   className,
@@ -47,15 +49,20 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const [copied, setcopied] = useState(false);
+  const [copied, setCopied] = useState(false);
   const handleCopy = () => {
     navigator.clipboard.writeText('afamsdev@gmail.com');
-    setcopied(true);
+    setCopied(true);
+    // Set a shorter delay to revert the text faster.
+    setTimeout(() => {
+      setCopied(false);
+    }, 1400);
   };
+
   return (
     <div
       className={cn(
-        'row-span-1  rounded-3xl relative overflow-hidden group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none  border border-white/[0.1] justify-between flex flex-col space-y-4',
+        'row-span-1 rounded-3xl relative overflow-hidden group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none border border-white/[0.1] justify-between flex flex-col space-y-4',
         className
       )}
       style={{
@@ -86,7 +93,7 @@ export const BentoGridItem = ({
         </div>
         {id === 6 && (
           <BackgroundGradientAnimation>
-            {/* <div className='absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl'></div> */}
+            {/* Optional overlay */}
           </BackgroundGradientAnimation>
         )}
         <div
@@ -94,7 +101,7 @@ export const BentoGridItem = ({
             titleClassName,
             'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10'
           )}>
-          <div className='font-sans font-extralight text-[#c1c2d3]  text-sm md:text-xs lg:text-base z-10 dark:text-neutral-300'>
+          <div className='font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10 dark:text-neutral-300'>
             {description}
           </div>
           <div className='font-sans font-bold text-lg lg:text-3xl max-w-96 z-10'>
@@ -103,7 +110,6 @@ export const BentoGridItem = ({
 
           {id === 2 && <GlobeDemo />}
           {id === 3 && (
-            //TODO: Ensure all children items have the same width.
             <div className='flex gap-1 lg:gap-5 -right-3 lg:-right-2 w-fit absolute'>
               <div className='flex flex-col gap-3 lg:gap-8'>
                 {['React.js', 'Next.js', 'PHP'].map((item) => (
@@ -115,7 +121,6 @@ export const BentoGridItem = ({
                 ))}
                 <span className='py-4 px-3 text-center rounded-lg bg-[#10132e]' />
               </div>
-              {/* Right Side */}
               <div className='flex flex-col gap-3 lg:gap-8'>
                 <span className='py-4 px-3 text-center rounded-lg bg-[#10132e]' />
                 {['HTML', 'CSS', 'TypeScript'].map((item) => (
@@ -130,18 +135,13 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className='mt-5 relative'>
-              <div className={`absolute -bottom-5 right-0`}>
+              <div className='absolute -bottom-5 right-0'>
                 <Lottie
-                  height={200}
-                  width={400}
-                  options={{
-                    loop: copied,
-                    autoplay: copied,
-                    animationData,
-                    rendererSettings: {
-                      preserveAspectRatio: 'xMidYMid slice',
-                    },
-                  }}
+                  key={copied ? 'animation-playing' : 'animation-idle'}
+                  play={copied}
+                  loop={false}
+                  animationData={animationData}
+                  style={{ width: 400, height: 200 }}
                 />
               </div>
               <MagicButton
