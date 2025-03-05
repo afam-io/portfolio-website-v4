@@ -75,28 +75,28 @@ export const workExperience = [
   {
     id: 1,
     title: 'Frontend Engineer',
-    desc: 'Assisted in the development of a web-based platform using React.js, enhancing interactivity.',
+    desc: 'Assisted in the development of a web-based platform using React.js, enhancing interactivity. Added several features such as flight tracking, journey planning, and more.',
     className: 'md:col-span-2',
     thumbnail: '/exp1.svg',
   },
   {
     id: 2,
     title: 'Mobile App Dev',
-    desc: 'Developed mobile app for both iOS & Android platforms using React Native.',
+    desc: 'Developed mobile app for both iOS & Android platforms using React Native. Integrated several features such as push notifications, privacy controls and travel planning.',
     className: 'md:col-span-2', // change to md:col-span-2
     thumbnail: '/exp2.svg',
   },
   {
     id: 3,
     title: 'Freelance App Dev Project',
-    desc: 'Developed scanning app for a client,',
+    desc: 'Developed scanning app for a client, that allowed users to be scanned in for festivals and events. Integrated several features such as QR code scanning and ticket validation .',
     className: 'md:col-span-2', // change to md:col-span-2
     thumbnail: '/exp3.svg',
   },
   {
     id: 4,
     title: 'Crypto Developer',
-    desc: 'Developed and maintained crypto project for a team.',
+    desc: 'Developed and maintained crypto project for a team. The app worked on the Sui blockchain and allowed users to trade their assets freely.',
     className: 'md:col-span-2',
     thumbnail: '/exp4.svg',
   },
