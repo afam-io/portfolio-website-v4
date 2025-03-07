@@ -6,8 +6,8 @@ import { socialMedia } from '@/data';
 
 const Footer = () => {
   return (
-    <footer className='w-full pt-20 pb-10' id='contact'>
-      <div className='w-full absolute left-0 -bottom-72 min-h-96'>
+    <footer className='w-full pt-20 pb-10 relative' id='contact'>
+      <div className='w-full fixed left-0 bottom-0 min-h-96 z-[-1]'>
         <img
           src='/footer-grid.svg'
           alt='grid'
@@ -32,7 +32,8 @@ const Footer = () => {
           />
         </a>
       </div>
-      <div className='flex mt-16 md:flex-row flex-col justify-between items-center '>
+
+      <div className='flex mt-16 md:flex-row flex-col justify-between items-center pb-10'>
         <p className='md:text-base text-sm md:font-normal font-light'>
           {' '}
           Copywrite © 2024 Afam Okoh
