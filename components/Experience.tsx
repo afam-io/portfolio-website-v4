@@ -4,11 +4,11 @@ import { CardBorder } from './ui/MovingBorders';
 
 const Experience = () => {
   return (
-    <div className='py-20' id='experience'>
-      <h1 className='heading'>
+    <section className='py-20' id='experience'>
+      <h2 className='heading'>
         My
-        <span className='text-purple'> work Experience</span>
-      </h1>
+        <span className='text-purple'> Work Experience</span>
+      </h2>
       <div className='w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10'>
         {workExperience.map((card) => (
           <CardBorder
@@ -23,9 +23,9 @@ const Experience = () => {
                 className='lg:w-32 md:w-20 w-16'
               />
               <div className='lg:ms-5'>
-                <h1 className='text-start text-xl md:text-2xl font-bold'>
+                <h3 className='text-start text-xl md:text-2xl font-bold'>
                   {card.title}
-                </h1>
+                </h3>
                 <p className='text-start text-white-100 mt-3 font-semibold'>
                   {card.desc}
                 </p>
@@ -34,7 +34,7 @@ const Experience = () => {
           </CardBorder>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
